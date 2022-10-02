@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js'
+    integrity='sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A=='
+    crossorigin='anonymous'></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap{
+            width: 100%;
+            height: 100vh;
+            background-color: yellow;
+           
+
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+            background-color: yellow;
+
+        }
+        .intro{
+            width: 100%;
+            height: 70vh;
+            background-color: black;
+            
+
+        }
+        img{
+            background-size: cover;
+            width: 277px;
+            height: 277px;
+            border-radius: 50%;
+            border: 3px solid black;
+        }
+        .myPhoto{
+            position: relative;
+            left: 50px;
+            top: 60px;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background-color: yellow;
+
+            
+            
+
+        }
+        .name{
+            position: relative;
+            top: -190px;
+            left: 450px;
+            width: 970px;
+            height: 50px;
+            
+            border-radius: 10px;
+
+        }
+        .skill__block{
+            width: 500px;
+            height: 370px;
+            background-color: black;position: relative;
+            top: -120px;
+            left: 900px;
+            border-radius: 20px;
+            border: 4px solid rgb(201, 201, 27)
+        }
+      
+        .typer {
+            position: relative;
+            top: 0px;
+            left: 0;
+            font-size: 80px;
+            font-family: monospace;
+            font-weight: 500;
+            color: white;
+            z-index: 2;
+        }
+        .skil{
+            
+            font-size: 20px;
+            
+            padding:  10px 0 0 0;
+
+            font-family: monospace;
+            font-weight: 500;
+        }
+        p{
+            position: relative;
+          
+            font-size: 17px;
+            padding: 20px;
+            color:  black;
+            
+          
+        }
+        h1{
+            font-size: 40px;
+        }
+        .efe{
+            color: black;
+            padding: 0;
+            font-size: 30px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+        }
+        .e{
+            position: relative;
+            top: -30px;
+            left: 0;
+            font-family: monospace;
+            font-size: 20px;
+        }
+        .pe{
+            position: relative;
+            left: 0;
+            top: -60px;
+            font-family: monospace;
+            font-size: 20px;
+           color: black;
+        }
+        .i{
+            font-family: monospace;
+            font-size: 20px;
+        }
+        .cont{
+            display: flex;
+            justify-content: space-around;
+           
+            
+
+        }
+        .card{
+     
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            cursor: pointer;
+         
+        }
+
+        .card-item{
+            width: 300px;
+            height: 350px;
+            position: absolute;
+            position: relative;
+            left: 30px;
+            top: 50px;
+
+          
+            
+            
+            background-color: black;
+            border: 4px solid rgb(201, 201, 27);
+            border-radius: 10px;
+            transition: transform 0.2s;
+            
+        }
+        .ie{
+           
+        }
+        .ier{
+           
+        }
+        .descp{
+            text-align: center;
+            position: relative;
+            font-size: 20px;
+            left: 110px;
+           
+           
+            color:  yellow;
+            top: 210px;
+            font-family: monospace;
+            font-weight: 500;
+            text-decoration: none;
+
+           
+
+        }
+        .hie{
+            font-size: 70px;
+            font-family: monospace;
+            font-weight: 500;
+
+
+        }
+        .p__class{
+            position: relative;
+            left: -20px;
+        }
+        button{
+            position: relative;
+            left: -10px;
+            width: 170px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            color: yellow;
+            background-color: black;
+        }
+       .git{
+        position: relative;
+        top: 90px;
+        left: 110px;
+        width: 60px;
+        height: 50px;
+       }
+       .insta{
+        position: relative;
+        top: 35px;
+        left: 190px;
+        width: 60px;
+        height: 50px;
+
+       }
+       .cot{
+        position: relative;
+        top: -80px;
+       }
+       .block{
+        display: none;
+        position: relative;
+        top: -50px;
+        left: 190px;
+        width: 500px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: yellow;
+       
+
+       }
+       .telegram{
+        width: 100px;
+        height: 50px;
+        background-color: yellow;
+        border: 1px solid black;
+        border-radius: 10px;
+
+       }
+       .viber{
+        width: 100px;
+        height: 50px;
+        background-color: yellow;
+        border: 1px solid black;
+        border-radius: 10px;
+        
+        
+       }
+       .linkedin{
+        width: 100px;
+        height: 50px;
+        background-color: yellow;
+        border: 1px solid black;
+        border-radius: 10px;
+        
+       }
+       .gmail{
+        width: 100px;
+        height: 50px;
+        background-color: yellow;
+        border: 1px solid black;
+       
+        
+       }
+       .icon{
+        position: relative;
+        top: 4px;
+        left: 28px;
+        width: 40px;
+        height: 40px;
+        
+       }
+       .langContainer {
+        position: relative;
+        top: -300px;
+        left: 1150px;
+        width: 150px;
+        height: 70px;
+        border-radius:30% 33% 27% 42%; 
+        display: flex;
+        align-items: center;
+        background-color: black;
+}
+    .langContainer img{
+        width: 40px;
+        height: 30px;
+        border: none;
+        position: relative;
+        left: 10px;
+        border-radius: 0;
+    }
+    .yel{
+        background-color: yellow;
+    }
+    .but{
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        top: 230px;
+        left: 10px;
+    }
+    .card__btn{
+        width: 100px;
+        height: 40px;
+        background-color: yellow;
+        color: black;
+    }
+    .card__text{
+        color: yellow;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        position: relative;
+        top: 230px;
+    }
+
+    .circle__one{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 1300px;
+        top: 150px;
+
+
+        width: 150px;
+        height: 150px;
+        background-color: black;
+        border-radius: 50%;
+
+    }
+    .circle__two{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 70px;
+        width: 150px;
+        height: 150px;
+        background-color: black;
+        border-radius: 50%;
+
+    }
+    .center{
+        position: relative;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color:  yellow;
+        border-radius: 50%;
+
+    }
+    .centertwo{
+        position: relative;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color:   yellow;
+        border-radius: 50%;
+
+    }
+    
+   
+
+
+       
+     
+
+      
+     
+
+     
+
+    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        
+        <section class="">
+        <div class="myPhoto">
+            <img src="maks.webp" alt="">
+            <div class="langContainer">
+            
+                <div class="en" id="en">
+             
+                <img  src="united-kingdom.png" alt="en">
+            </div>
+            <div class="ua" id="ua">
+                <img src="ukraine.png" alt="ua">
+                
+            </div>
+            <div class="es" id="es">
+                <img src="spain.png" alt="es">
+                
+            </div>
+            
+        </div>
+
+        </div>
+      
+        
+        <div class="github">
+            <a href="https://github.com/Maksimgnam?tab=repositories" ><img class="git" src="github.png" alt=""></a>
+
+        </div>
+        <div class="instagram">
+            <a href="https://www.instagram.com/" ><img class="insta" src="insta.png" alt=""></a>
+
+        </div>
+        <div class="cot">
+         
+        <div class="name">
+            <h1 class="hie lang-hi" >hi everyone!</h1>
+            <h1 class="lang-im"> I'm
+                <span class = "typer lang-typer" id = "main" data-words = "Maks,Hnap,Web developer" data-delay = "100" data-deleteDelay = "1000" data-color="white" ></span > <span class = "cursor" data-owner = "main" ></span> </h1>
+                 <p class="efe lang-efe">Im Maksym Hnap. Im ukrainian. Im web developer. I study in creator It Academy.I started coding about 2 years ago. </p>
+                 <h1 class="skil lang-skil">my skills</h1>
+                 <div class="p__class">
+          
+                 <p class="i lang-i">Js ,CSS ,Sass ,Scss ,Stylus ,Html ,Bootstrap ,Typer.js ,Tippy.js ,Aos</p>
+                 <p class="e lang-e">Api ,Rexexp ,Node ,Figma ,Photoshop </p>
+                 <p class="pe lang-pe">Experience with: python, java, c#, c++</p>
+                </div>
+                <div class="btn">
+                    <button id="btn" class="langue-btn">Write me</button>
+                    <div class="block" id="block">
+                        <div class="telegram">
+                            <a href="https://t.me/maksym_hnap"><img class="icon" src="telegram.png" alt=""></a>
+
+                        </div>
+                        <div class="viber">
+                            <a href="https://www.linkedin.com/feed/"><img class="icon" src="viber.png" alt=""></a>
+
+                        </div>
+                        <div class="linkedin">
+                            <a href="https://www.linkedin.com/feed/"><img class="icon" src="linkedin.png" alt=""></a>
+                            
+
+                        </div>
+                        <div class="gmail" id="myButton">
+                            <a href=""><img class="icon"   src="gmail.png" alt=""></a>
+                            
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="circle">
+            <div class="circle__one" id="circleOne">
+                <button class="center" id="centerOne">
+
+                </button>
+
+            </div>
+            <div class="circle__two" id="circleTwo">
+                <button class="centertwo" id="centerTwo">
+
+                    
+                </button>
+
+            </div>
+            
+
+        </div>
+    </div>
+    </section>
+
+    <section class="intro">
+          <div class="cont">
+        
+        <div class="card">
+            <div class="card-item">
+                <div class="but">
+                <a href="https://maksimgnam.github.io/nakamo/"><button class="card__btn re">view</button></a>
+                <a href="https://github.com/Maksimgnam/nakamo.git"><button class="card__btn">code</button></a>
+         
+            </div>
+            <p class="card__text">nakamo</p>
+            
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-item ie">
+                <div class="but">
+                    <a href="https://maksimgnam.github.io/dashboard/l"><button class="card__btn re">view</button></a>
+                    <a href="https://github.com/Maksimgnam/dashboard.git"><button class="card__btn">code</button></a>
+             
+                </div>
+                <p class="card__text">dashboard</p>
+   
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-item ier">
+                <div class="but">
+                    <a href="https://maksimgnam.github.io/bankomat/"><button class="card__btn re">view</button></a>
+                    <a href="https://github.com/Maksimgnam/bankomat.git"><button class="card__btn">code</button></a>
+             
+                </div>
+                <p class="card__text">bankomat</p>
+              
+            </div>
+        </div>
+    </div>
+        
+  
+    </section>
+    <section class="intro yel">
+        <div class="cont">
+      
+      <div class="card">
+          <div class="card-item">
+            <div class="but">
+                <a href="https://maksimgnam.github.io/CoffeeMachine/"><button class="card__btn re">view</button></a>
+                <a href="https://github.com/Maksimgnam/CoffeeMachine.git"><button class="card__btn">code</button></a>
+         
+            </div>
+            <p class="card__text">coffee</p>
+         
+          </div>
+      </div>
+      <div class="card">
+          <div class="card-item ie">
+            <div class="but">
+                <a href="https://maksimgnam.github.io/home/"><button class="card__btn re">view</button></a>
+                <a href="https://github.com/Maksimgnam/home.git"><button class="card__btn">code</button></a>
+         
+            </div>
+            <p class="card__text">home</p>
+         
+          </div>
+      </div>
+      <div class="card">
+          <div class="card-item ier">
+            <div class="but">
+                <a href="https://maksimgnam.github.io/donat/"><button class="card__btn re">view</button></a>
+                <a href="https://github.com/Maksimgnam/donat.git"><button class="card__btn">code</button></a>
+         
+            </div>
+            <p class="card__text">donat</p>
+        
+          </div>
+      </div>
+  </div>
+      
+
+  </section>
+  <section class="intro">
+    <div class="cont">
+  
+  <div class="card">
+      <div class="card-item">
+        <div class="but">
+            <a href="maksimgnam.github.io/Latte-Caffe/"><button class="card__btn re">view</button></a>
+            <a href="https://github.com/Maksimgnam/Latte-Caffe.git"><button class="card__btn">code</button></a>
+     
+        </div>
+        <p class="card__text">Latte-Caffe</p>
+      </div>
+  </div>
+  <div class="card">
+      <div class="card-item ie">
+        
+        <div class="but">
+            <a href="https://maksimgnam.github.io/border/"><button class="card__btn re">view</button></a>
+            <a href="https://github.com/Maksimgnam/border.git"><button class="card__btn">code</button></a>
+     
+        </div>
+        <p class="card__text">border</p>
+      </div>
+  </div>
+  <div class="card">
+      <div class="card-item ier">
+        <div class="but">
+            <a href="https://maksimgnam.github.io/booble/"><button class="card__btn re">view</button></a>
+            <a href="https://github.com/Maksimgnam/booble.git"><button class="card__btn">code</button></a>
+     
+        </div>
+        <p class="card__text">booble</p>
+      </div>
+  </div>
+</div>
+  
+
+</section>
+       
+    
+            
+    
+            
+
+     
+      
+  
+
+
+    </div>
+    <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+    <script src="app.js"></script>
+    <script>
+
+        btn.onclick = function(){
+    block.style.display = 'flex'
+    block.style.taransition = '0.6s'
+}
+
+let semanticCore = {
+     hi: {
+        'ua': 'Привіт всім!',
+        'en': 'Hello everyone',
+        'es': 'Hola a todos!'
+        
+
+
+    },
+    typer: {
+        'ua': 'Максим ГНап Веб розробник',
+        'en': 'Maks,Hnap,Web developer',
+        'es': 'Maksym Gnap Desarrollador web'
+        
+    },
+    efe: {
+        'ua': 'Я Максим Гнап. Я українець. Я веб-розробник. Я навчаюся в Creator It Academy. Я почав кодувати близько 2 років тому.',
+        'en': 'Im Maksym Hnap. Im ukrainian. Im web developer. I study in creator It Academy.I started coding about 2 years ago.',
+        'es': 'Soy Maxim Gnap. soy ucraniano Soy un desarrolladoр web. Estudio en Creator It Academy. Empecé a codificar 2012 року.'
+        
+    },
+    skil: {
+        'ua': 'Мої навики',
+        'en': 'My skil',
+        'es': 'Mis habilitats'
+     
+    },
+
+  
+ 
+    pe: {
+        'ua': 'Досвід з',
+        'en': 'Experience with',
+        'es': 'Experiencia con'
+      
+    }
+   
+};
+
+let lang = 'en';
+
+ua.onclick = function () {
+    lang = 'ua';
+    changeURL();
+}
+en.onclick = function () {
+    lang= 'en';
+    changeURL();
+}
+es.onclick = function () {
+    lang= 'es';
+    changeURL();
+}
+
+
+function changeURL() {
+    location.href = window.location.pathname + '#' + lang;
+    location.reload();
+}
+function changeLanguage() {
+    let hash = (window.location.hash).substring(1);
+
+    for (let key in semanticCore) {
+        $('.lang-' + key).text(semanticCore[key][hash]);
+        console.log(key);
+    }
+}
+
+
+changeLanguage()
+
+centerOne.onclick = function() {
+    centerTwo.style.display = 'yellow'
+   
+
+}
+tippy('#myButton', {
+        content: 'Write me on m41261538@gmail.com',
+      });
+
+
+
+
+
+    </script>
+
+</body>
+</html>
